@@ -20,7 +20,7 @@ let numberArr: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1
  if numberArr == numberArr.filter({$0 % 2 == 0}) {
      print("All even numbers")
 }
-print(numberArr.filter({$0 % 2 == 0}))
+print(numberArr.filter({$0 % 2 != 0}))
 //reduce
 //Use reduce to multiply all numbers in [1,2,3,4].
 let nos = [1, 2, 3, 4]
@@ -133,6 +133,9 @@ class GenericStack<T> {
     func pop() -> T? {
         return items.popLast()
     }
+    func displayInfo() {
+            print("items: \(items)")
+        }
 }
 var genericStack = GenericStack<Int>(items: [])
 genericStack.push(item: 1)
@@ -142,6 +145,7 @@ genericStack.push(item: 4)
 print(genericStack)
 genericStack.pop()
 print(genericStack)
+genericStack.displayInfo()
 
 // same with Queue
 
@@ -251,6 +255,5 @@ stringQueue.addElements("Cherry")
 print("StringQueue:", stringQueue.displayQueue())
 stringQueue.removeElement()
 print("After removal:", stringQueue.displayQueue())
-
 
 
